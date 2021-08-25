@@ -97,7 +97,12 @@ namespace Playground
             if (OnErrorEvent != null)
             {
                 OnErrorEvent.Invoke(sender, args);
+
+                return;
             }
+
+            // Default behiour if no event is registered
+            Console.WriteLine($"Exception: {args.Message}");
         }
 
         public void Dispose()
